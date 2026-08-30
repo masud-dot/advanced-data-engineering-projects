@@ -1,0 +1,1 @@
+The manuscript is the user's authored work. This bundle is generated from the uploaded manuscript for the user's GitHub companion repositories. Review all third-party software licenses before distributing dependencies or vendor assets.

@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+*.log
+logs/*
+.ipynb_checkpoints/
+.idea/
+.vscode/
+.DS_Store
+*.parquet
+output/
+checkpoints/
+.pytest_cache/
+project-01-enterprise-airflow-pipeline-backup/

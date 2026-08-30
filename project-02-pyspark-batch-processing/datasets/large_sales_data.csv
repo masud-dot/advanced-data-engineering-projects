@@ -1,0 +1,4 @@
+order_id,region,product_name,quantity,price
+1,East,Laptop,1,75000
+2,West,Keyboard,2,2000
+3,North,Monitor,1,15000
