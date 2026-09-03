@@ -1,0 +1,3 @@
+
+# Spark Structured Streaming runtime state
+spark_checkpoint/
