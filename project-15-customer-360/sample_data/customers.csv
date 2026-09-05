@@ -1,0 +1,9 @@
+customer_id,customer_name,email,region,signup_date
+101,Alice Johnson,alice@example.com,North,2024-01-15
+102,Bob Smith,bob@example.com,South,2024-02-20
+103,Carol Williams,carol@example.com,East,2024-03-10
+104,David Brown,david@example.com,West,2024-04-05
+105,Emma Davis,emma@example.com,North,2024-05-18
+106,Frank Miller,frank@example.com,South,2024-06-22
+107,Grace Wilson,grace@example.com,East,2024-07-12
+108,Henry Moore,henry@example.com,West,2024-08-30

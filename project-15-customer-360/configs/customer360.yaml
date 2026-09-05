@@ -1,0 +1,58 @@
+project:
+  name: customer_360_unified_analytics_platform
+  version: "1.0"
+
+environment:
+  name: local
+  timezone: UTC
+
+ingestion:
+  batch_enabled: true
+  source_files:
+    - customers.csv
+    - orders.csv
+    - products.csv
+    - customer_activity.csv
+
+processing:
+  standardize_columns: true
+  deduplicate_customers: true
+  deduplicate_orders: true
+  enrich_customer_profiles: true
+
+customer360:
+  lifetime_value_enabled: true
+  activity_metrics_enabled: true
+  segmentation_enabled: true
+  preferred_category_enabled: true
+
+storage:
+  data_lake_root: customer360_lake
+  bronze_path: bronze
+  silver_path: silver
+  gold_path: gold
+  format: parquet
+
+warehouse:
+  database: customer360_analytics
+  customer_dimension: dim_customer
+  customer_profile: customer_360_profile
+  transaction_fact: fact_customer_transactions
+
+quality:
+  enabled: true
+  minimum_score: 95
+  fail_on_error: false
+
+monitoring:
+  enabled: true
+  runtime_threshold_seconds: 60
+  minimum_quality_score: 95
+
+orchestration:
+  retries: 3
+  retry_delay_seconds: 2
+
+analytics:
+  recent_days: 30
+  top_customer_limit: 10
