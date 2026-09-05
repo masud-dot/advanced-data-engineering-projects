@@ -2,9 +2,11 @@ database:
   host: ${DB_HOST}
   port: 5432
   name: data_engineering_prod
+
 storage:
   bucket: prod-data-lake
   region: us-east-1
+
 pipeline:
   batch_size: 100000
   retry_count: 3

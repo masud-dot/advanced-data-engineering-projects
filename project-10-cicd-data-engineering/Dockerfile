@@ -1,7 +1,14 @@
 FROM python:3.11-slim
+
 WORKDIR /app
+
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV ENVIRONMENT=prod
+
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+
 COPY . .
-ENV ENVIRONMENT=prod
-CMD ["python","pipelines/etl_pipeline.py"]
+
+CMD ["python", "pipeline.py"]

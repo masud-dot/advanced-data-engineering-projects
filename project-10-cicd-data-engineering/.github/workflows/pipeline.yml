@@ -1,19 +1,21 @@
 name: Data Pipeline CI/CD
+
 on:
-  push:
-    branches: [main, develop]
-  pull_request:
-    branches: [main]
+  workflow_dispatch:
+
 jobs:
-  test:
+  pipeline:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
+          cache: pip
+
       - run: pip install -r requirements.txt
-      - run: pytest tests/ -v --tb=short
-      - name: Deploy to staging
-        if: github.ref == 'refs/heads/main' && success()
-        run: echo 'Deploying to staging environment...'
+
+      - name: Execute data pipeline
+        run: python pipeline.py
