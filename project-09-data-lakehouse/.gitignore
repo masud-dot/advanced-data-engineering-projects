@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.log
+*.parquet
+local_output/
+.venv/
+.env
+spark-warehouse/
