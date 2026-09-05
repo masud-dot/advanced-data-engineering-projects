@@ -1,0 +1,54 @@
+dataset:
+  name: sales_data
+  primary_key:
+    - transaction_id
+
+schema:
+  required_columns:
+    transaction_id: int64
+    customer_id: object
+    product_id: object
+    transaction_date: object
+    amount: float64
+    status: object
+
+completeness:
+  required_columns:
+    - transaction_id
+    - customer_id
+    - product_id
+    - transaction_date
+    - amount
+    - status
+  minimum_completeness_score: 0.95
+
+duplicates:
+  key_columns:
+    - transaction_id
+
+business_rules:
+  amount:
+    min: 0
+  status:
+    allowed_values:
+      - COMPLETED
+      - CANCELLED
+      - REFUNDED
+
+freshness:
+  timestamp_column: transaction_date
+  max_age_days: 7
+
+referential_integrity:
+  customer_id:
+    reference_file: sample_data/customers.csv
+    reference_column: customer_id
+
+scoring:
+  schema_weight: 0.20
+  completeness_weight: 0.20
+  duplicate_weight: 0.15
+  business_rule_weight: 0.20
+  freshness_weight: 0.10
+  referential_integrity_weight: 0.15
+  minimum_quality_score: 0.95

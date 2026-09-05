@@ -1,0 +1,48 @@
+{
+  "dataset": "sales_data",
+  "row_count": 10,
+  "quality_score": 1.0,
+  "status": "PASS",
+  "checks": {
+    "schema": {
+      "passed": true,
+      "message": "Schema validation passed.",
+      "missing_columns": [],
+      "type_errors": {}
+    },
+    "completeness": {
+      "passed": true,
+      "score": 1.0,
+      "message": "Completeness validation passed.",
+      "null_counts": {
+        "transaction_id": 0,
+        "customer_id": 0,
+        "product_id": 0,
+        "transaction_date": 0,
+        "amount": 0,
+        "status": 0
+      }
+    },
+    "duplicates": {
+      "passed": true,
+      "duplicate_count": 0,
+      "message": "Duplicate validation passed."
+    },
+    "business_rules": {
+      "passed": true,
+      "violation_count": 0,
+      "message": "Business-rule validation passed.",
+      "violations": []
+    },
+    "freshness": {
+      "passed": true,
+      "age_days": 1.2779,
+      "message": "Freshness validation passed."
+    },
+    "referential_integrity": {
+      "passed": true,
+      "invalid_count": 0,
+      "message": "Referential integrity validation passed."
+    }
+  }
+}
