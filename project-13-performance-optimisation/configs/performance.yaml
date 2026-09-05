@@ -1,0 +1,32 @@
+project:
+  name: pipeline_performance_optimisation
+  version: "1.0"
+
+benchmark:
+  iterations: 3
+  warmup_runs: 1
+
+processing:
+  batch_size: 1000
+  workers: 4
+
+memory:
+  optimization_enabled: true
+  memory_threshold_mb: 512
+
+parallel:
+  enabled: true
+  workers: 4
+
+caching:
+  enabled: true
+  cache_directory: local_cache
+
+partitioning:
+  enabled: true
+  partition_column: transaction_date
+
+performance_targets:
+  maximum_runtime_seconds: 10
+  minimum_throughput_rows_per_second: 1000
+  maximum_memory_mb: 512

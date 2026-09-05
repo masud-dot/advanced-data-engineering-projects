@@ -1,0 +1,27 @@
+{
+  "dataset": "sales_data.csv",
+  "rows": 10000,
+  "baseline": {
+    "name": "baseline_transform",
+    "average_seconds": 0.07094236667035148,
+    "minimum_seconds": 0.06808479997562245,
+    "maximum_seconds": 0.07321320002665743,
+    "iterations": 3
+  },
+  "optimized": {
+    "name": "optimized_transform",
+    "average_seconds": 0.0027754333374711373,
+    "minimum_seconds": 0.00252909999107942,
+    "maximum_seconds": 0.0029235000256448984,
+    "iterations": 3
+  },
+  "speedup": 25.56082529980392,
+  "memory_before_mb": 2.2953052520751953,
+  "memory_after_mb": 0.3259315490722656,
+  "metrics": {
+    "rows_processed": 10000,
+    "runtime_seconds": 0.002862999972421676,
+    "throughput_rows_per_second": 3492839.7123041097,
+    "memory_mb": 0.3259315490722656
+  }
+}
