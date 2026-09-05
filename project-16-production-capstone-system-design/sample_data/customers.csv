@@ -1,0 +1,9 @@
+customer_id,customer_name,country,customer_segment,signup_date
+1001,Alice Johnson,US,PREMIUM,2024-01-15
+1002,Bob Smith,US,STANDARD,2024-02-20
+1003,Carol Williams,UK,PREMIUM,2024-03-10
+1004,David Brown,CA,STANDARD,2024-04-05
+1005,Emma Davis,US,PREMIUM,2024-05-18
+1006,Frank Miller,DE,STANDARD,2024-06-12
+1007,Grace Wilson,UK,STANDARD,2024-07-01
+1008,Henry Moore,CA,PREMIUM,2024-08-22

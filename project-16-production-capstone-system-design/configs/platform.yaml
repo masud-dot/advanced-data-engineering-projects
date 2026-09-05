@@ -1,0 +1,87 @@
+project:
+  name: production_capstone_system_design
+  version: "1.0"
+
+environment:
+  name: local
+  timezone: UTC
+
+architecture:
+  event_ingestion: kafka
+  stream_processing: spark_structured_streaming
+  storage: s3_iceberg
+  warehouse: redshift
+  orchestration: airflow
+  monitoring: prometheus
+
+local_simulation:
+  enabled: true
+  simulate_kafka: true
+  simulate_spark: true
+  simulate_s3: true
+  simulate_iceberg: true
+  simulate_redshift: true
+  simulate_airflow: true
+  simulate_prometheus: true
+
+ingestion:
+  batch_enabled: true
+  streaming_enabled: true
+  event_latency_target_seconds: 5
+
+processing:
+  bronze_enabled: true
+  silver_enabled: true
+  gold_enabled: true
+  checkpointing_enabled: true
+  incremental_processing: true
+
+storage:
+  lake_root: production_lake
+  bronze_path: bronze
+  silver_path: silver
+  gold_path: gold
+  format: parquet
+  table_format: iceberg
+
+warehouse:
+  database: production_analytics
+  transaction_table: fact_transactions
+  customer_table: dim_customers
+  fraud_table: fact_fraud_events
+
+quality:
+  enabled: true
+  minimum_score: 95
+  fail_on_error: true
+
+monitoring:
+  enabled: true
+  latency_threshold_seconds: 5
+  pipeline_runtime_threshold_seconds: 60
+  minimum_quality_score: 95
+
+orchestration:
+  retries: 3
+  retry_delay_seconds: 2
+
+security:
+  encryption_at_rest: true
+  encryption_in_transit: true
+  kms_enabled: true
+  least_privilege: true
+  secrets_from_environment: true
+
+reliability:
+  availability_target: 99.9
+  rpo_minutes: 0
+  rto_minutes: 15
+
+disaster_recovery:
+  primary_region: us-east-1
+  secondary_region: us-west-2
+  cross_region_replication: true
+
+analytics:
+  historical_window_months: 12
+  dashboard_refresh_minutes: 1440
