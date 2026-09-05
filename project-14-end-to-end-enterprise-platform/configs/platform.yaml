@@ -1,0 +1,50 @@
+project:
+  name: end_to_end_enterprise_data_platform
+  version: "1.0"
+
+environment:
+  name: local
+  timezone: UTC
+
+ingestion:
+  batch_enabled: true
+  streaming_enabled: true
+  source_files:
+    - customers.csv
+    - products.csv
+    - orders.csv
+
+processing:
+  mode: batch_and_streaming
+  partition_column: order_date
+  batch_size: 1000
+
+storage:
+  data_lake_root: data_lake
+  bronze_path: bronze
+  silver_path: silver
+  gold_path: gold
+  format: parquet
+
+warehouse:
+  database: enterprise_analytics
+  fact_table: fact_orders
+  customer_dimension: dim_customer
+  product_dimension: dim_product
+
+quality:
+  enabled: true
+  minimum_score: 95
+  fail_on_error: false
+
+monitoring:
+  enabled: true
+  runtime_threshold_seconds: 60
+  minimum_quality_score: 95
+
+orchestration:
+  retries: 3
+  retry_delay_seconds: 5
+
+analytics:
+  recent_days: 30

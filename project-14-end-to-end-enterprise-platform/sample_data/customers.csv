@@ -1,0 +1,6 @@
+customer_id,customer_name,email,region
+101,Alice Johnson,alice@example.com,North
+102,Bob Smith,bob@example.com,South
+103,Carol Williams,carol@example.com,East
+104,David Brown,david@example.com,West
+105,Emma Davis,emma@example.com,North
