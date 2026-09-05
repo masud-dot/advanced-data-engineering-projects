@@ -1,0 +1,27 @@
+pipeline:
+  name: sales_monitoring_pipeline
+  freshness_threshold_minutes: 60
+  max_error_rate: 0.10
+  min_output_rows: 1
+
+alerts:
+  enabled: true
+  severity_levels:
+    - INFO
+    - WARNING
+    - CRITICAL
+
+thresholds:
+  max_error_rate: 0.10
+  max_duration_seconds: 30
+  max_error_count: 0
+  min_quality_score: 0.95
+  min_output_rows: 1
+
+logging:
+  level: INFO
+  log_file: local_output/pipeline.log
+
+storage:
+  metrics_file: local_output/metrics.json
+  alerts_file: local_output/alerts.json
